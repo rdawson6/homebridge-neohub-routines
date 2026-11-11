@@ -1,0 +1,63 @@
+{
+  "name": "homebridge-neohub-routines",
+  "version": "0.1.0",
+  "displayName": "Heatmiser neoHub Routines",
+  "description": "Homebridge plugin that runs Heatmiser neoHub routines (recipes) from HomeKit over the hub's local API, and exposes each zone's temperature as a HomeKit sensor.",
+  "license": "MIT",
+  "author": {
+    "name": "Rich Dawson",
+    "url": "https://github.com/rdawson6"
+  },
+  "contributors": [
+    {
+      "name": "Kiro AI",
+      "url": "https://kiro.dev"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rdawson6/homebridge-neohub-routines"
+  },
+  "homepage": "https://github.com/rdawson6/homebridge-neohub-routines#readme",
+  "bugs": {
+    "url": "https://github.com/rdawson6/homebridge-neohub-routines/issues"
+  },
+  "type": "commonjs",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rimraf dist",
+    "lint": "eslint src/ --ext .ts",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "homebridge-plugin",
+    "homekit",
+    "heatmiser",
+    "neohub",
+    "neostat",
+    "routines",
+    "recipes"
+  ],
+  "engines": {
+    "node": ">=20.0.0",
+    "homebridge": "^1.8.0 || ^2.0.0"
+  },
+  "dependencies": {
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.10",
+    "@types/ws": "^8.5.12",
+    "@typescript-eslint/eslint-plugin": "^7.16.1",
+    "@typescript-eslint/parser": "^7.16.1",
+    "eslint": "^8.57.0",
+    "typescript": "^5.4.5"
+  },
+  "files": [
+    "dist/",
+    "config.schema.json",
+    "README.md",
+    "CHANGELOG.md"
+  ]
+}

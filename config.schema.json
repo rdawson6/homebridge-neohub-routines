@@ -1,0 +1,89 @@
+{
+  "pluginAlias": "NeoHubRoutines",
+  "pluginType": "platform",
+  "singular": true,
+  "headerDisplay": "Runs your Heatmiser neoHub routines from HomeKit, and shows each zone's temperature as a sensor. Talks to the hub over your local network; second-generation neoHub required.",
+  "footerDisplay": "Create the API token in the Neo app under Settings > API. See the [README](https://github.com/rdawson6/homebridge-neohub-routines#readme) for details.",
+  "schema": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "title": "Platform Name",
+        "type": "string",
+        "default": "neoHub Routines",
+        "description": "Name shown in the Homebridge log for this platform."
+      },
+      "token": {
+        "title": "API Token",
+        "type": "string",
+        "required": true,
+        "placeholder": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+        "description": "Token created in the Neo app under Settings > API."
+      },
+      "host": {
+        "title": "Hub IP Address",
+        "type": "string",
+        "placeholder": "192.168.1.50",
+        "description": "Leave empty to find the hub automatically. Setting it gives faster, more reliable startup."
+      },
+      "zoneSensors": {
+        "title": "Show zone temperature sensors",
+        "type": "boolean",
+        "default": true,
+        "description": "Adds a temperature sensor for each thermostat zone, for use in HomeKit automations."
+      },
+      "excludeRoutines": {
+        "title": "Hidden routines",
+        "type": "array",
+        "description": "Routine names (exactly as in the Neo app) that should not appear in HomeKit.",
+        "items": {
+          "type": "string",
+          "title": "Routine name"
+        }
+      },
+      "routineRefreshMinutes": {
+        "title": "Routine list refresh (minutes)",
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 1440,
+        "default": 10,
+        "description": "How often to re-read the routine list from the hub."
+      },
+      "temperatureRefreshSeconds": {
+        "title": "Temperature refresh (seconds)",
+        "type": "integer",
+        "minimum": 60,
+        "maximum": 3600,
+        "default": 120,
+        "description": "How often to read zone temperatures. The hub only updates them about every 90 seconds."
+      },
+      "commandGapSeconds": {
+        "title": "Gap between hub commands (seconds)",
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 30,
+        "default": 3,
+        "description": "The hub stops responding if commands arrive too quickly. Increase this if you see timeouts."
+      }
+    }
+  },
+  "layout": [
+    "token",
+    "host",
+    "zoneSensors",
+    {
+      "key": "excludeRoutines",
+      "type": "array",
+      "title": "Hidden routines",
+      "buttonText": "Add routine to hide",
+      "items": ["excludeRoutines[]"]
+    },
+    {
+      "type": "fieldset",
+      "title": "Advanced",
+      "expandable": true,
+      "expanded": false,
+      "items": ["name", "routineRefreshMinutes", "temperatureRefreshSeconds", "commandGapSeconds"]
+    }
+  ]
+}
