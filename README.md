@@ -62,6 +62,10 @@ Create routines in the Neo app. The hub also accepts routines created through it
 
 Routines can contain any hub command, including `RUN_PROFILE_ID` to switch zones to a different schedule.
 
+## Credits
+
+Written by [Kiro](https://kiro.dev), an AI coding assistant, working with Rich Dawson, who tested it against his own neoHub.
+
 ## Licence
 
 MIT

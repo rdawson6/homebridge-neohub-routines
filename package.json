@@ -1,6 +1,6 @@
 {
   "name": "homebridge-neohub-routines",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "displayName": "Heatmiser neoHub Routines",
   "description": "Homebridge plugin that runs Heatmiser neoHub routines (recipes) from HomeKit over the hub's local API, and exposes each zone's temperature as a HomeKit sensor.",
   "license": "MIT",
