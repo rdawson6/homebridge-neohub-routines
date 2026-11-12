@@ -64,7 +64,16 @@ Routines can contain any hub command, including `RUN_PROFILE_ID` to switch zones
 
 ## Credits
 
-Written by [Kiro](https://kiro.dev), an AI coding assistant, working with Rich Dawson, who tested it against his own neoHub.
+**neoHub API**
+Documented by Heatmiser in the *neoHub API* guide (Rev 3.02), shared on the [Heatmiser Developer Portal](https://dev.heatmiser.com). Members of the portal's forum reported the hub's command rate limits.
+
+**Starting point**
+[homebridge-heatmiser-smartstat](https://gitlab.com/sedov.nz/homebridge-heatmiser-smartstat) by Aleksandr Sedov showed that neoHub commands could be sent from Homebridge. This plugin uses the hub's local API instead of the cloud service that plugin relies on, and shares no code with it.
+
+**Built with Kiro AI**
+This plugin was designed and built with [Kiro](https://kiro.dev), an AI-powered development environment. Kiro found the hub on the network, tested each routine and schedule command against the live hub, worked out the quoting and routine formats the hub and the Neo app actually accept, and verified the plugin against the hub before release.
+
+---
 
 ## Licence
 
